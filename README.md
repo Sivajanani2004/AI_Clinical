@@ -187,7 +187,7 @@ discharge_summary.txt
 
 ## 👩‍💻 Author
 
-**Sivajanani**
+**Siva janani R**
 
 ---
 
