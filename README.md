@@ -1,98 +1,196 @@
 # 🏥 AI Clinical Workflow System
 
-A **professional clinical workflow dashboard** for hospitals built with **Streamlit** and integrated with a backend API.  
-This system provides a secure employee portal, patient management, staff management, discharge summary generation, and an AI-powered clinical assistant.
+A **professional clinical workflow dashboard** built using **Streamlit** with backend API integration.  
+This system helps hospitals manage patients, staff, discharge summaries, and includes an AI-powered clinical assistant.
 
 ---
 
-## 🚀 Project Overview
+## 📌 Project Overview
 
-The **AI Clinical Workflow System** is a modern web application designed for hospital staff — doctors and administrators — to streamline clinical tasks and documentation.
+The **AI Clinical Workflow System** is a modern web application designed for:
 
-It features:
+- 👨‍⚕️ Doctors  
+- 🧑‍💼 Admin Staff  
 
-✔ Secure login & role-based access  
-✔ Patient registration and record management  
-✔ Discharge summary generator (AI assisted)  
-✔ Doctor approval & staff management  
-✔ Discharge summary archive with export options  
-✔ AI-driven clinical decision support (RAG-based)  
-✔ Responsive and professional interface built using Streamlit  
+It streamlines:
+
+- Patient management  
+- Staff approval workflow  
+- Discharge summary generation  
+- Clinical AI assistance  
+- Secure authentication  
 
 ---
 
-## 📌 Features
+## 🚀 Features
 
 ### 🔐 Authentication
-- Secure login using token-based authentication
-- Role-based UI rendering
-- Admin and Doctor roles
+- Secure login system
+- Token-based authentication
+- Role-based access (Admin / Doctor)
+- Session handling
 
-### 🏨 Dashboard
-- Overview of patient stats
-- Pending tasks and recent activity display
+---
 
-### 👤 Patient Records
-- Add and manage patient information
-- Search and filter records
-- Dynamic table view
+### 📊 Dashboard
+- Overview statistics
+- Patient counts
+- Staff summary
+- Recent activity tracking
 
-### 🧑‍⚕️ Staff Management
+---
+
+### 🧑‍⚕️ Patient Management
+- Add new patients
+- View patient records
+- Search & filter functionality
+- Dynamic patient table
+
+---
+
+### 👩‍⚕️ Staff Management
 - Admin can create doctor accounts
-- Doctors get approved by admin
-- Multi-tab UI for active and pending staff
-
-### 📄 Templates
-- Create, preview, and delete clinical templates
-- Used for AI-based discharge summary generation
-
-### 🤖 AI Discharge Generator
-- Generates clinical discharge summaries
-- Download as TEXT files
-
-### 🧠 Clinical Assistant
-- AI-based searchable knowledge assistant
-- Provides clinical answers with hospital data
+- Doctor approval workflow
+- Pending & Active staff tabs
+- Role-based UI rendering
 
 ---
 
-## 📦 Tech Stack
-
-| Component | Technology |
-|-----------|-------------|
-| Frontend | Streamlit |
-| Backend | FastAPI (assumed) |
-| AI Assistant | Integration with RAG / Chat API |
-| Authentication | Token based |
+### 📄 Clinical Templates
+- Create discharge templates
+- Preview templates
+- Delete templates
+- Used for AI-based discharge generation
 
 ---
 
-## 🧠 Screenshot
-
-<!-- Optional: You can place screenshots here to show UI -->
+### 🤖 AI Discharge Summary Generator
+- Generates structured discharge summaries
+- Uses AI backend integration
+- Download summary as `.txt` file
 
 ---
 
-## 🛠 Installation
+### 🧠 Clinical Assistant (RAG-based)
+- AI-powered knowledge assistant
+- Provides clinical suggestions
+- Uses hospital data context
 
-1. Clone the Repo:
+---
+
+## 🛠 Tech Stack
+
+| Layer        | Technology |
+|-------------|------------|
+| Frontend    | Streamlit |
+| Backend     | FastAPI |
+| Database    | SQLite / SQLAlchemy |
+| AI Layer    | RAG / LLM Integration |
+| Auth        | Token-based authentication |
+
+---
+
+## 📂 Project Structure
+
+```bash
+AI_Clinical/
+│
+├── app.py
+├── requirements.txt
+├── backend/
+│   ├── models.py
+│   ├── routes.py
+│   └── database.py
+│
+├── templates/
+├── utils/
+└── README.md
+```
+
+---
+
+## ⚙️ Installation Guide
+
+### 1️⃣ Clone the Repository
+
 ```bash
 git clone https://github.com/Sivajanani2004/AI_Clinical.git
+cd AI_Clinical
+```
 
-2.Create and activate Python environment:
+---
 
+### 2️⃣ Create Virtual Environment
+
+```bash
 python -m venv venv
-source venv/bin/activate      # Mac / Linux
-venv\Scripts\activate         # Windows
+```
 
+#### Activate Environment
 
-3.Install requirements:
+**Windows**
+```bash
+venv\Scripts\activate
+```
 
+**Mac / Linux**
+```bash
+source venv/bin/activate
+```
+
+---
+
+### 3️⃣ Install Dependencies
+
+```bash
 pip install -r requirements.txt
+```
 
+---
 
-4.Run the app:
+### 4️⃣ Run the Application
 
-``bash
-
+```bash
 streamlit run app.py
+```
+
+---
+
+## 🔐 Default Roles
+
+| Role   | Access |
+|--------|--------|
+| Admin  | Full system access |
+| Doctor | Patient & discharge access |
+
+---
+
+## 📥 Discharge Summary Download
+
+Generated summaries can be downloaded as:
+
+```bash
+discharge_summary.txt
+```
+
+---
+
+## 🌍 Future Improvements
+
+- JWT Authentication enhancement
+- Cloud deployment (AWS / Azure)
+- PDF export for discharge summary
+- Audit logging
+- Multi-hospital support
+
+---
+
+## 👩‍💻 Author
+
+**Sivajanani**
+
+---
+
+## 📜 License
+
+This project is for educational and demonstration purposes.
