@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+sqlalchemy
+pydantic
+python-jose
+passlib
+python-multipart
+requests
+pandas
+python-dotenv
+langchain
+langchain-community
+faiss-cpu
+sentence-transformers
+openai

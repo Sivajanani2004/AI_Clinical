@@ -1,0 +1,25 @@
+services:
+
+  backend:
+    build: ./backend
+    container_name: hospital_backend
+    ports:
+      - "8000:8000"
+    networks:
+      - hospital_network
+    restart: always
+
+  frontend:
+    build: ./frontend
+    container_name: hospital_frontend
+    ports:
+      - "8501:8501"
+    depends_on:
+      - backend
+    networks:
+      - hospital_network
+    restart: always
+
+networks:
+  hospital_network:
+    driver: bridge
