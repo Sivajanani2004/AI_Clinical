@@ -1,92 +1,92 @@
 # 🏥 AI Clinical Workflow System
 
-A **professional clinical workflow dashboard** built using **Streamlit** with backend API integration.  
-This system helps hospitals manage patients, staff, discharge summaries, and includes an AI-powered clinical assistant.
+A **professional clinical workflow dashboard** built using **Streamlit + FastAPI + AI (RAG)** with **Docker support**.  
+This system helps hospitals manage patients, staff, discharge summaries, and provides an AI-powered clinical assistant.
 
 ---
 
 ## 📌 Project Overview
 
-The **AI Clinical Workflow System** is a modern web application designed for:
+The **AI Clinical Workflow System** is a modern healthcare web application designed for:
 
 - 👨‍⚕️ Doctors  
-- 🧑‍💼 Admin Staff  
+- 🧑‍💼 Hospital Admin Staff  
 
-It streamlines:
+It simplifies:
 
 - Patient management  
-- Staff approval workflow  
-- Discharge summary generation  
-- Clinical AI assistance  
-- Secure authentication  
+- Staff approval workflows  
+- AI-based discharge summary generation  
+- Clinical knowledge assistance  
 
 ---
 
 ## 🚀 Features
 
 ### 🔐 Authentication
-- Secure login system
-- Token-based authentication
-- Role-based access (Admin / Doctor)
-- Session handling
+- Secure login system  
+- Token-based authentication  
+- Role-based access (Admin / Doctor)  
+- Session handling  
 
 ---
 
 ### 📊 Dashboard
-- Overview statistics
-- Patient counts
-- Staff summary
-- Recent activity tracking
+- Overview statistics  
+- Patient counts  
+- Staff summary  
+- Recent activity tracking  
 
 ---
 
 ### 🧑‍⚕️ Patient Management
-- Add new patients
-- View patient records
-- Search & filter functionality
-- Dynamic patient table
+- Add new patients  
+- View patient records  
+- Search & filter functionality  
+- Dynamic patient table  
 
 ---
 
 ### 👩‍⚕️ Staff Management
-- Admin can create doctor accounts
-- Doctor approval workflow
-- Pending & Active staff tabs
-- Role-based UI rendering
+- Admin can create doctor accounts  
+- Doctor approval workflow  
+- Pending & Active staff tabs  
+- Role-based UI rendering  
 
 ---
 
 ### 📄 Clinical Templates
-- Create discharge templates
-- Preview templates
-- Delete templates
-- Used for AI-based discharge generation
+- Create discharge templates  
+- Preview templates  
+- Delete templates  
+- Used for AI-based discharge generation  
 
 ---
 
 ### 🤖 AI Discharge Summary Generator
-- Generates structured discharge summaries
-- Uses AI backend integration
-- Download summary as `.txt` file
+- Generates structured discharge summaries  
+- Uses AI backend integration  
+- Download summary as `.txt` file  
 
 ---
 
 ### 🧠 Clinical Assistant (RAG-based)
-- AI-powered knowledge assistant
-- Provides clinical suggestions
-- Uses hospital data context
+- AI-powered knowledge assistant  
+- Provides clinical suggestions  
+- Uses hospital data context  
 
 ---
 
 ## 🛠 Tech Stack
 
-| Layer        | Technology |
-|-------------|------------|
-| Frontend    | Streamlit |
-| Backend     | FastAPI |
-| Database    | SQLite / SQLAlchemy |
-| AI Layer    | RAG / LLM Integration |
-| Auth        | Token-based authentication |
+| Layer | Technology |
+|------|-------------|
+| Frontend | Streamlit |
+| Backend | FastAPI |
+| Database | SQLite / SQLAlchemy |
+| AI Layer | RAG / LLM Integration |
+| Auth | Token-based authentication |
+| Containerization | Docker |
 
 ---
 
@@ -95,20 +95,20 @@ It streamlines:
 ```bash
 AI_Clinical/
 │
-├── app.py
-├── requirements.txt
 ├── backend/
-│   ├── models.py
-│   ├── routes.py
-│   └── database.py
+│   ├── main.py
+│   ├── models/
+│   ├── services/
+│   ├── auth/
+│   └── Dockerfile
 │
-├── templates/
-├── utils/
+├── frontend/
+│   ├── app1.py
+│   └── Dockerfile
+│
+├── docker-compose.yml
+├── requirements.txt
 └── README.md
-```
-
----
-
 ## ⚙️ Installation Guide
 
 ### 1️⃣ Clone the Repository
@@ -147,13 +147,46 @@ pip install -r requirements.txt
 ```
 
 ---
-
-### 4️⃣ Run the Application
+### 4️⃣ Run Backend Server
 
 ```bash
-streamlit run app.py
+uvicorn backend.main:app --reload
 ```
 
+Backend will run at:
+```bash
+http://localhost:8000
+```
+
+API documentation:
+```bash
+http://localhost:8000/docs
+```
+
+### 5️⃣ Run Frontend Application
+
+```bash
+streamlit run frontend/app.py
+```
+
+Frontend dashboard:
+```bash
+http://localhost:8501
+```
+---
+
+### 🐳 Run Using Docker
+
+Build and Start Containers:
+```bash
+docker compose up --build
+```
+
+Stop Containers:
+
+```bash
+docker compose down
+```
 ---
 
 ## 🔐 Default Roles
